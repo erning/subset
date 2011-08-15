@@ -110,16 +110,14 @@ if __name__ == '__main__':
         b = sys.argv[2]
 
         ret = is_subset(a, b)
-        print '"' + a + '" is',
-        if not ret:
-            print 'NOT',
-        print 'subset of "' + b + '"'
+        if ret: c=''
+        else: c='NOT '
+        print '"{0}" is {1}subset of "{2}"'.format(a, c, b)
 
         ret = is_subset(b, a)
-        print '"' + b + '" is',
-        if not ret:
-            print 'NOT',
-        print 'subset of "' + a + '"'    
+        if ret: c=''
+        else: c='NOT '
+        print '"{0}" is {1}subset of "{2}"'.format(b, c, a)
     except Exception as e:
         print e
         raise e
