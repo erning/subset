@@ -43,7 +43,8 @@ class Tests(unittest.TestCase):
         self.assertIsSubset('a>10 and b>10', 'a>5 or b>5')
         self.assertIsSubset('a>10 and b>10 and c>10', 'a>5 and b>5 and c>5')
         self.assertIsNotSubset('a>10 and b>10 and c>10', 'a>5 and b>5 and c<5')
-        self.assertIsSubset('(a>10 and b>10) or (c>10 and d>10)', '(a>5 and b>5) or (c>5 and d>5)');
+        self.assertIsSubset('(a>10 or b>10) and (c>10 or d>10)', '(a>5 or b>5) and (c>5 or d>5)');
+        self.assertIsSubset('a>10 and b>10 or c>10 and d>10', 'a>5 and b>5 or c>5 and d>5');
         self.assertIsSubset('(a>10 or b>10) and c>10', '(a>10 or b>10) and c>5');
         self.assertIsNotSubset('(a>10 or b>10) and c>10', '(a>10 or b>10) and c>15');
 
@@ -253,4 +254,7 @@ class Tests(unittest.TestCase):
         ]
         for expect, a, b in cases:
             self.assertEqual(is_subset(a, b), expect, (expect, a, b))             
+
+if __name__ == '__main__':
+    unittest.main()
 
