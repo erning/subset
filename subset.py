@@ -73,8 +73,6 @@ def _is_subset(a, b, absent=False):
     else:
         return _is_subset_factor(a, b, absent)
 
-    return ret    
-
 def is_subset(a, b):
     '''
     params a, b are expressions in string

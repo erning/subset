@@ -21,11 +21,11 @@ def t_STRING(t):
     return t
 
 def t_FLOAT(t):
-    r'\d+\.\d+'
+    r'-?\d+\.\d+'
     return t
 
 def t_INTEGER(t):
-    r'\d+'
+    r'-?\d+'
     return t
 
 def t_GTE(t):

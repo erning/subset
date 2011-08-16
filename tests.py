@@ -47,6 +47,7 @@ class Tests(unittest.TestCase):
         self.assertIsSubset('a>10 and b>10 or c>10 and d>10', 'a>5 and b>5 or c>5 and d>5');
         self.assertIsSubset('(a>10 or b>10) and c>10', '(a>10 or b>10) and c>5');
         self.assertIsNotSubset('(a>10 or b>10) and c>10', '(a>10 or b>10) and c>15');
+        self.assertIsSubset('a>10 and a<20', 'a>5 and a<25');
 
 #
 # Test factor
