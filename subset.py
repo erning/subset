@@ -17,7 +17,7 @@ def _is_subset_factor(a, b, absent=False):
         if bo == '>=': return bv <= av
         if bo == '<=': return bv >= av
         if bo == '!=': return bv != av
-        
+
     elif ao == '>':
         if bo == '==': return False
         if bo == '>' : return bv <= av
@@ -88,17 +88,17 @@ def is_subset(a, b):
     if type(b) is str:
         b = parser.parse(b)
     b = normalizer.normalize(b)
-    
+
     return _is_subset(a, b)
 
 def is_superset(a, b):
     '''
     params a, b are expressions in string
     return True if a ⊇ b or False if a ⊉ b
-    '''    
+    '''
     return is_subset(b, a)
 
-if __name__ == '__main__':
+def main():
     try:
         import sys
         if len(sys.argv) < 3:
@@ -119,6 +119,7 @@ if __name__ == '__main__':
     except Exception as e:
         print e
         raise e
+
 
 __all__ = ['is_subset', 'is_superset']
 

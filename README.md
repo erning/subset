@@ -1,3 +1,31 @@
+## Quick Start
+
+```text
+$ git clone git://github.com/erning/subset.git
+$ cd subset
+$ script/bootstrap
+```
+
+### Run it
+```text
+$ .bootstrap/ve subset 'age>21' 'age>20'
+
+"age>21" is subset of "age>20"
+"age>20" is NOT subset of "age>21"
+```
+
+### Tests
+```
+$ .bootstrap/ve python tests.py
+
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.044s
+
+OK
+```
+
+## 原始问题
 
 请写一个算法，判断一个查询表达式是不是另外一个查询表达式的子集。
 
