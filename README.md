@@ -1,3 +1,6 @@
+
+[![Build Status](https://travis-ci.org/erning/subset.png)](https://travis-ci.org/erning/subset)
+
 ## Quick Start
 
 ```text
